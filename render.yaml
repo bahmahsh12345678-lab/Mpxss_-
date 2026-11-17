@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: rinex-bot
+    env: python
+    plan: free
+    buildCommand: pip install --no-cache-dir -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: OMP_NUM_THREADS
+        value: 1
+      - key: WEB_ADMIN_USER
+        value: admin
+      - key: WEB_ADMIN_PASS
+        value: rinex2024
